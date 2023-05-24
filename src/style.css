@@ -1,5 +1,95 @@
-.box {
-    width: 100px;
-    height: 100px;
-    background-color: aqua;
+:root {
+    --header-color: #8E9AAF;
+    --project-section-color: #CBC0D3;
+    --todo-section-color: #FEEAFA;
+}
+
+@font-face {
+    font-family: 'Yatra One';
+    src: url(../dist/fonts/YatraOne-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Merriweather';
+    src: url(../dist/fonts/Merriweather-Light.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.todo-app {
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 7vh;
+    background: var(--header-color);
+    font-family: 'Yatra One';
+    font-size: 2.5rem;
+    padding: 40px 0;
+    box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.2);
+    /* border: 1px solid #000; */
+    z-index: 5;
+}
+
+.container {
+    width: 100%;
+    height: calc(100vh - 7vh);
+    display: grid;
+    /* grid-template-columns: 1.3fr 5fr; */
+    grid-template-columns: minmax(17rem, 1fr) 4fr;
+}
+
+.project-container {
+    grid-column: 1 / 2;
+    background: var(--project-section-color);
+    padding: 50px 40px 0;
+}
+
+.todo-container {
+    grid-column: 2 / 3;
+    background: var(--todo-section-color);
+}
+
+.project {
+    font-size: 23px;
+    font-family: 'Merriweather';
+    font-weight: 600;
+    padding: 10px;
+    /* border: 1px solid #000; */
+    border-radius: 5px;
+}
+
+.created-projects h1 {
+    margin-top: 20px;
+    font-size: 2.5rem;
+}
+
+.created-projects .create-new-project-btn {
+    width: 90%;
+    font-size: 23px;
+    text-align: center;
+    /* border: 1px solid #000; */
+    margin-top: 15px;
+    padding: 7px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.created-projects .create-new-project-btn:hover {
+    background: #c4b7cd;
 }
