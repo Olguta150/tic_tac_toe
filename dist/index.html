@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ToDo List</title>
     <script src="main.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <div class="todo-app">
@@ -13,17 +14,38 @@
         <div class="container">
             <div class="project-container">
                 <div class="default-projects">
-                    <div id="inbox" class="project">Inbox</div>
-                    <div id="today" class="project">Today</div>
-                    <div id="week" class="project">This week</div>
+                    <div id="inbox" class="project"><i class="fa-solid fa-inbox"></i>Inbox</div>
+                    <div id="today" class="project"><i class="fa-solid fa-calendar-day"></i>Today</div>
+                    <div id="week" class="project"><i class="fa-solid fa-calendar-week"></i>This week</div>
                 </div>
                 <div class="created-projects">
                     <h1>Projects</h1>
-                    <div class="create-new-project-btn">Add project</div>
+                    <button data-open-modal class="create-new-project-btn"><i class="fa-solid fa-plus"></i>Add project</button>
+                    <div class="new-projects-container">
+                        <div class="new-project">home<i class="fa-solid fa-trash"></i></div>
+                        <div class="new-project">work<i class="fa-solid fa-trash"></i></div>
+                        <div class="new-project">dance<i class="fa-solid fa-trash"></i></div>
+                        <div class="new-project">programming<i class="fa-solid fa-trash"></i></div>
+                        <div class="new-project">life<i class="fa-solid fa-trash"></i></div>
+                        <div class="new-project">home<i class="fa-solid fa-trash"></i></div>
+                        <div class="new-project">work<i class="fa-solid fa-trash"></i></div>
+                        <div class="new-project">dance<i class="fa-solid fa-trash"></i></div>
+                        <div class="new-project">programming<i class="fa-solid fa-trash"></i></div>
+                        <div class="new-project">life<i class="fa-solid fa-trash"></i></div>
+                    </div>
                 </div>
             </div>
             <div class="todo-container"></div>
         </div>
+        <dialog class="modal" id="modal">
+            <div class="add-project-modal-window">
+                <input type="text" name="name" class="add-project-name">
+                <div class="add-project-window-btns">
+                    <button data-close-modal class="name-project-btn close-modal">Cancel</button>
+                    <button class="name-project-btn">Add</button>
+                </div>
+            </div>
+        </dialog>
     </div>
 </body>
 </html>
