@@ -24,6 +24,7 @@ body {
     width: 100vw;
     height: 100vh;
     overflow: hidden;
+    background: var(--todo-section-color);
 }
 
 .todo-app {
@@ -68,11 +69,10 @@ body {
     font-size: 23px;
     font-family: 'Merriweather';
     font-weight: 600;
-    padding: 15px 25px;
-    /* border: 1px solid #000; */
+    padding: 10px 25px;
+    margin: 7px 0;
     border-radius: 5px;
     cursor: pointer;
-    /* margin-bottom: 10px; */
     transition: 0.3s ease-in-out;
 }
 
@@ -127,7 +127,8 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 25px;
+    padding: 10px 25px;
+    margin: 7px;
     font-size: 23px;
     cursor: pointer;
     width: 95%;
@@ -191,4 +192,38 @@ body {
 
 .name-project-btn:nth-of-type(2) {
     background: var(--project-section-color);
+}
+
+.items {
+    width: 70%;
+    margin-inline: auto;
+    padding: 2em 0;
+}
+
+.todo-container {
+    overflow-y: auto;
+}
+
+.todo-container::-webkit-scrollbar {
+    width: 10px;
+    padding-left: 15px;
+}
+
+.todo-container::-webkit-scrollbar-thumb {
+    background: var(--header-color);
+    border-radius: 10px;
+}
+
+.todo-item {
+    font-size: 1.3rem;
+    padding: 1.3em;
+    margin: 1em 0;
+    border-radius: 0.3em;
+    background: #ede0d4;
+    transform: scale(1);
+    transition: 0.3s ease-in-out;
+}
+
+.todo-item:hover {
+    transform: scale(1.03);
 }
