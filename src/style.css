@@ -68,9 +68,12 @@ body {
     font-size: 23px;
     font-family: 'Merriweather';
     font-weight: 600;
-    padding: 10px;
+    padding: 15px 25px;
     /* border: 1px solid #000; */
     border-radius: 5px;
+    cursor: pointer;
+    /* margin-bottom: 10px; */
+    transition: 0.3s ease-in-out;
 }
 
 .created-projects h1 {
@@ -79,17 +82,113 @@ body {
 }
 
 .created-projects .create-new-project-btn {
+    display: flex;
+    justify-content: center;
     width: 90%;
     font-size: 23px;
     text-align: center;
-    /* border: 1px solid #000; */
+    border: 1px solid #000;
     margin-top: 15px;
+    margin-left: 50%;
+    transform: translateX(-50%);
     padding: 7px 0;
     border-radius: 5px;
     cursor: pointer;
+    background: var(--project-section-color);
     transition: 0.3s ease-in-out;
 }
 
-.created-projects .create-new-project-btn:hover {
-    background: #c4b7cd;
+.created-projects .create-new-project-btn:hover, .project:hover, .new-project:hover {
+    background: #b0a0bb;
+}
+
+.fa-solid {
+    font-size: 20px;
+    padding-right: 10px;
+}
+
+.new-projects-container {
+    padding-top: 20px;
+    max-height: 25rem;
+    /* border: 1px solid #000; */
+    overflow-y: auto;
+}
+
+.new-projects-container::-webkit-scrollbar {
+    width: 10px;
+}
+
+.new-projects-container::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: var(--header-color);
+}
+
+.new-project {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 25px;
+    font-size: 23px;
+    cursor: pointer;
+    width: 95%;
+    border-radius: 5px;
+}
+
+.fa-trash {
+    display: none;
+}
+
+.new-project:hover .fa-trash {
+    display: block;
+}
+
+.modal {
+    position: absolute;
+    inset: 0;
+    margin: auto;
+}
+
+.add-project-modal-window {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    padding: 3em 5em;
+}
+
+.add-project-modal-window .add-project-name {
+    font-size: 1.3rem;
+    padding: 0.3em;
+    border: none;
+    border-bottom: 1px solid #000;
+    font-family: 'Merriweather';
+}
+
+.add-project-modal-window .add-project-name:focus {
+    /* -webkit-appearance: none; */
+    outline-color: transparent;
+    border-bottom: 2px solid #000;
+}
+
+.add-project-window-btns {
+    display: flex;
+    justify-content: space-between;
+}
+
+.name-project-btn {
+    padding: 0.5em 1em;
+    font-size: 1.1rem;
+    min-width: 5.5em;
+    font-family: 'Merriweather';
+    font-weight: 600;
+    border: 1px solid #000;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.name-project-btn:first-of-type {
+    background: var(--project-section-color);
+}
+
+.name-project-btn:nth-of-type(2) {
+    background: var(--project-section-color);
 }
