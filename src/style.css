@@ -215,7 +215,7 @@ body {
 }
 
 .todo-item {
-    font-size: 1.3rem;
+    font-size: 1.35rem;
     padding: 1.3em;
     margin: 1em 0;
     border-radius: 0.3em;
@@ -226,4 +226,54 @@ body {
 
 .todo-item:hover {
     transform: scale(1.03);
+}
+
+.todo-item {
+    display: flex;
+    justify-content: space-between;
+}
+
+.todo-item .fa-pen-to-square, .todo-item .fa-delete-left {
+    cursor: pointer;
+}
+
+.todo-item .wrap-todo-item {
+    display: flex;
+    gap: 1em;
+    align-items: center;
+}
+
+.todo-item .options {
+    display: flex;
+    gap: 1em;
+}
+
+.wrap-todo-item label {
+    position: relative;
+}
+
+.wrap-todo-item input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    background: var(--header-color);
+    width: 1rem;
+    height: 1rem;
+    box-shadow: 2px -2px rgb(0 0 0 / 0.7);
+    /* box-shadow: 2px -2px var(--project-section-color); */
+    transition: all 0.3s ease-in-out;
+}
+
+.wrap-todo-item input[type="checkbox"]:checked {
+    position: absolute;
+    /* width: 50%; */
+    width: 5em;
+    height: 1.5px;
+    background: #000;
+    opacity: .3;
+    box-shadow: none;
+}
+
+.wrap-todo-item input[type="checkbox"]:checked + label {
+    opacity: .5;
+    text-decoration: line-through;
 }
