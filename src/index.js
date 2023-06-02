@@ -15,3 +15,15 @@ closeModal.addEventListener('click', () => {
     modal.close();
     inputProjectName.value = '';
 });
+
+const projectModal = document.querySelector('.project-modal');
+const openProjectModal = document.querySelector('.create-new-task-btn');
+const closeProjectModal = document.querySelector('.close-project-modal');
+
+openProjectModal.addEventListener('click', () => {
+    projectModal.showModal();
+});
+
+closeProjectModal.addEventListener('click', () => {
+    projectModal.close();
+})
