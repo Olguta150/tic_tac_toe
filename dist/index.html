@@ -20,7 +20,7 @@
                 </div>
                 <div class="created-projects">
                     <h1>Projects</h1>
-                    <button data-open-modal class="create-new-project-btn"><i class="fa-solid fa-plus"></i>Add project</button>
+                    <button data-open-modal class="create-new-project-btn"><i class="fa-solid fa-plus add-project-icon"></i>Add project</button>
                     <div class="new-projects-container">
                         <!-- <div class="new-project">home<i class="fa-solid fa-trash"></i></div>
                         <div class="new-project">work<i class="fa-solid fa-trash"></i></div>
@@ -158,6 +158,9 @@
                         </div>
                     </div>
                 </div>
+                <div class="add-task-btn-container">
+                    <button data-open-modal class="create-new-task-btn"><i class="fa-solid fa-plus add-todo-icon"></i></button>
+                </div>
             </div>
         </div>
         <dialog class="modal" id="modal">
@@ -168,6 +171,9 @@
                     <button class="name-project-btn">Add</button>
                 </div>
             </div>
+        </dialog>
+        <dialog class="project-modal" id="project-modal">
+            <button data-close-modal class="close-project-modal">Cancel</button>
         </dialog>
     </div>
 </body>
