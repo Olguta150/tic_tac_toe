@@ -16,14 +16,14 @@ closeModal.addEventListener('click', () => {
     inputProjectName.value = '';
 });
 
-const projectModal = document.querySelector('.project-modal');
-const openProjectModal = document.querySelector('.create-new-task-btn');
-const closeProjectModal = document.querySelector('.close-project-modal');
+const taskModal = document.querySelector('.task-modal');
+const openTaskModal = document.querySelector('.create-new-task-btn');
+const closeTaskModal = document.querySelector('.close-project-modal');
 
-openProjectModal.addEventListener('click', () => {
-    projectModal.showModal();
+openTaskModal.addEventListener('click', () => {
+    taskModal.showModal();
 });
 
-closeProjectModal.addEventListener('click', () => {
-    projectModal.close();
+closeTaskModal.addEventListener('click', () => {
+    taskModal.close();
 })
