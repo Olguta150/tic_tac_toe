@@ -42,7 +42,6 @@ body {
     font-size: 2.5rem;
     padding: 40px 0;
     box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.2);
-    /* border: 1px solid #000; */
     z-index: 5;
 }
 
@@ -50,7 +49,6 @@ body {
     width: 100%;
     height: calc(100vh - 7vh);
     display: grid;
-    /* grid-template-columns: 1.3fr 5fr; */
     grid-template-columns: minmax(17rem, 1fr) 4fr;
 }
 
@@ -67,6 +65,8 @@ body {
 }
 
 .project {
+    display: flex;
+    gap: 15px;
     font-size: 23px;
     font-family: 'Merriweather';
     font-weight: 600;
@@ -111,7 +111,6 @@ body {
 .new-projects-container {
     padding-top: 20px;
     max-height: 25rem;
-    /* border: 1px solid #000; */
     overflow-y: auto;
 }
 
@@ -166,7 +165,6 @@ body {
 }
 
 .add-project-modal-window .add-project-name:focus {
-    /* -webkit-appearance: none; */
     outline-color: transparent;
     border-bottom: 2px solid #000;
 }
@@ -261,13 +259,11 @@ body {
     width: 1rem;
     height: 1rem;
     box-shadow: 2px -2px rgb(0 0 0 / 0.7);
-    /* box-shadow: 2px -2px var(--project-section-color); */
     transition: all 0.3s ease-in-out;
 }
 
 .wrap-todo-item input[type="checkbox"]:checked {
     position: absolute;
-    /* width: 50%; */
     width: 5em;
     height: 1.5px;
     background: #000;
@@ -299,6 +295,7 @@ body {
     box-shadow: 3px 3px 5px rgb(0 0 0 / 0.7);
     transform: scale(1);
     transition: 0.2s ease-in-out;
+    cursor: pointer;
 }
 
 .create-new-task-btn:hover, .create-new-task-btn:hover .add-todo-icon {
@@ -309,4 +306,179 @@ body {
     font-size: 2.3rem;
     transform: scale(1);
     transition: 0.2s ease-in-out;
+}
+
+dialog {
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgb(0 0 0 / .5);
+}
+
+.dialog__wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 50px;
+    font-size: 1.5rem;
+}
+
+.title-row #title {
+    appearance: none;
+    border: none;
+    border-bottom: 1px solid #000;
+    padding: 5px;
+    font-size: 1.3rem;
+    transition: padding .3s ease-in-out;
+    font-family: 'Merriweather';
+}
+
+.title-row #title:focus {
+    border-bottom: 2px solid #000;
+    outline: none;
+}
+
+.description-row {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.description-row #description {
+    padding: 10px;
+    font-size: 1.2rem;
+    font-family: 'Merriweather';
+}
+
+.date-row input[type="date"] {
+    appearance: none;
+    background: var(--header-color);
+    padding: 5px 10px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    font-family: 'Merriweather';
+    cursor: pointer;
+}
+
+textarea::placeholder {
+    font-size: 1.1rem;
+}
+
+.btns {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 2rem;
+}
+
+.btns .task-btn {
+    padding: 10px 15px;
+    font-size: 1.2rem;
+    min-width: 10rem;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 2px solid var(--header-color);
+    font-family: 'Merriweather';
+    font-weight: 600;
+    transition: background .2s ease-in-out;
+}
+
+.btns .task-btn:hover {
+    background: var(--project-section-color);
+}
+
+.grid-options {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template: repeat(auto-fit, minmax(50px, 1fr));
+}
+
+.date-row {
+    grid-column: 1 / 2;
+}
+
+.custom-select {
+    grid-column: 2 / 3;
+}
+
+.priority-selection {
+    grid-column: 3 / 4;
+}
+
+.custom-select {
+    position: relative;
+}
+
+.custom-select select {
+    background: var(--header-color);
+    padding: 0.3em;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.priority__toolbox {
+    display: none;
+    position: absolute;
+    right: 20px;
+    padding: 0.5em;
+    margin-top: 7px;
+    border: 2px solid var(--header-color);
+    background: var(--todo-section-color);
+    border-radius: 20px;
+}
+
+.priority__toolbox::before {
+    position: absolute;
+    content: '';
+    top: -5px;
+    left: 40px;
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 5px solid var(--header-color);
+}
+
+.priority-selection input[type="checkbox"]:checked ~ .priority__toolbox {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+    grid-template-rows: 1fr 1fr;
+    gap: 0.5em;
+}
+
+.priority-selection input[type="checkbox"] {
+    display: none;
+}
+
+.choose-color {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #bf0603;
+    box-shadow: 1px 1px 3px rgb(0 0 0 / 0.7);
+    cursor: pointer;
+}
+
+.priority__red {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+}
+
+.priority__orange {
+    background: #ff4d6d;
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+}
+
+.priority__yellow {
+    background: #ffd60a;
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+}
+
+.priority__green {
+    background: #007f5f;
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
 }
