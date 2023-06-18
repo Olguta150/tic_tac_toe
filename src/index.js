@@ -1,9 +1,11 @@
 import './style.css';
 import { addModalFunctionality } from './dom_manipulation';
+import { extendToDo } from './dom_manipulation';
 
 console.log("let's get started");
 
 addModalFunctionality();
+extendToDo();
 
 
 // openModal.addEventListener('click', () => {
