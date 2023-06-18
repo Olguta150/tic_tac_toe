@@ -11,8 +11,29 @@ function addModalFunctionality() {
     const openTaskModal = document.querySelector('.create-new-task-btn');
     const closeTaskModal = document.querySelector('.close-project-modal');
 
-    modalAction(openProjectModal, closeProjectModal, projectModal);
+    modalAction(openProjectModal, closeProjectModal, projectModal, inputProjectName);
     modalAction(openTaskModal, closeTaskModal, taskModal);
 }
 
-export {addModalFunctionality};
+function extendToDo() {
+    const extendTask = document.querySelectorAll('.extend-task');
+    const todoItemDescription = document.querySelectorAll('.todo-item__description');
+    
+    extendTask.forEach(task => {
+        task.addEventListener('click', (elem) => {
+            todoItemDescription.forEach(description => {
+                if(description.dataset.indexDescription === elem.target.dataset.indexArrow) {
+                    if(task.classList.contains('extend-task__arrow-down')) {
+                        description.style.display = 'block';
+                        task.classList.replace('extend-task__arrow-down', 'extend-task__arrow-up');
+                    } else if(task.classList.contains('extend-task__arrow-up')) {
+                        description.style.display = 'none';
+                        task.classList.replace('extend-task__arrow-up', 'extend-task__arrow-down');
+                    }
+                }
+            })
+        })
+    });
+}
+
+export {addModalFunctionality, extendToDo};
